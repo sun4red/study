@@ -11,7 +11,6 @@ public class PayList {
 		// TODO Auto-generated method stub
 
 		List<Payment> paylist = new ArrayList();
-		Payment pay = new Payment();
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -23,6 +22,7 @@ public class PayList {
 				String yn = br.readLine();
 				if (yn.equals("y")) {
 
+					Payment pay = new Payment(); // 각 입력마다 새로운 객체 생성을 위해 반복문 내에 위치
 					System.out.println("참가자 이름 입력하세요");
 					pay.setMember(br.readLine());
 					System.out.println("항목을 입력하세요");
@@ -30,7 +30,7 @@ public class PayList {
 					System.out.println("금액을 입력하세요");
 					pay.setAmount(Double.parseDouble(br.readLine()));
 
-					paylist.add(i,pay);
+					paylist.add(pay);
 
 					i++;
 				} else if (yn.equals("n")) {
@@ -40,7 +40,6 @@ public class PayList {
 					System.out.println("잘못된 입력");
 					continue;
 				}
-
 			}
 
 		} catch (Exception e) {
@@ -49,9 +48,9 @@ public class PayList {
 
 		for (int i = 0; i < paylist.size(); i++) {
 			System.out.println("<" + (i + 1) + "번째 결제 건>");
-			System.out.println("참여자 :\t" + paylist.get(i).getMember());
-			System.out.println("항목 :\t" + paylist.get(i).getItem());
-			System.out.println("금액 :\t" + paylist.get(i).getAmount());
+			System.out.println("참여자 \t:" + paylist.get(i).getMember());
+			System.out.println("항목 \t:" + paylist.get(i).getItem());
+			System.out.println("금액 \t:" + paylist.get(i).getAmount());
 			System.out.println();
 		}
 
