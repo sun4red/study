@@ -1,17 +1,17 @@
 package acc;
 
-class payment {
+class Payment {
 
-	private String name;
+	private String member;
 	private String item;
 	private double amount;
 
-	public String getName() {
-		return name;
+	public String getMember() {
+		return member;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setMember(String member) {
+		this.member = member;
 	}
 
 	public String getItem() {
