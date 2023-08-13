@@ -45,6 +45,7 @@ public class PayList {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		double sum = 0;
 
 		for (int i = 0; i < paylist.size(); i++) {
 			System.out.println("<" + (i + 1) + "번째 결제 건>");
@@ -52,8 +53,13 @@ public class PayList {
 			System.out.println("항목 \t:" + paylist.get(i).getItem());
 			System.out.println("금액 \t:" + paylist.get(i).getAmount());
 			System.out.println();
+			sum += paylist.get(i).getAmount();
 		}
-
+		double avg = sum / paylist.size();
+		
+		System.out.println("<결산>");
+		System.out.println("총 금액 \t :"+sum);
+		System.out.println("1건당 평균 금액 \t :"+avg);
 	}
 
 }
