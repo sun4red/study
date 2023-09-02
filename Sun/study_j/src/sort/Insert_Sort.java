@@ -21,6 +21,7 @@ public class Insert_Sort {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         int[] list = new int[list_length];
 
         for (int i = 0; i < list_length; i++) {
@@ -88,7 +89,6 @@ public class Insert_Sort {
         String driver = "oracle.jdbc.driver.OracleDriver";
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
 
-
         try {
 
             Class.forName(driver);
@@ -97,7 +97,6 @@ public class Insert_Sort {
             String sql = "insert into sort_result(type, list_length, executions, changes, ex_date)" +
                     " values(?,?,?,?,sysdate)";
 
-
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, "insert");
             pstmt.setInt(2, list_length);
@@ -105,9 +104,6 @@ public class Insert_Sort {
             pstmt.setInt(4, change);
 
             int result = pstmt.executeUpdate();
-            System.out.println("엑시큐트업데이트 실행안됨");
-
-            System.out.println(result);
 
             if (result == 1) {
                 System.out.println("통계 DB 반영 성공");
@@ -126,7 +122,6 @@ public class Insert_Sort {
             } catch (Exception e) {
             }
         }
-
     }
 }
 
