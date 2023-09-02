@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+  <connection>
+    <productId>com.tomato.db.oracle_10g</productId>
+    <productName>Oracle 9i ~ 12c</productName>
+    <name>hong_oracle</name>
+    <driverJar>D:\install\Java\jdk-11\lib\ojdbc6.jar</driverJar>
+    <driverClass>oracle.jdbc.OracleDriver</driverClass>
+    <url>jdbc:oracle:thin:@localhost:1521:xe</url>
+    <properties>
+      <user>hong</user>
+      <port>1521</port>
+      <password>2143</password>
+      <sId>xe</sId>
+      <host>localhost</host>
+      <internal_logon>normal</internal_logon>
+    </properties>
+    <extendedProperties>
+      <connectionString />
+    </extendedProperties>
+  </connection>
+</database>
+

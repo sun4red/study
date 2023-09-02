@@ -3,9 +3,10 @@ package sort;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Selection_Sort {
-    // 선택정렬
+public class Bubble_Sort {
+    // 버블정렬
     public static void main(String[] args) {
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        Scanner sc = new Scanner(System.in);
         int list_length = 0;
@@ -38,29 +39,33 @@ public class Selection_Sort {
         System.out.println();
         /* ========== 배열 생성 완료 ========== */
 
-        int count = 0, change = 0;
+        int f = list_length, n = 1, s, count = 0, change = 0;
 
-        for (int p = 0; p < list_length; p++) {
-            int s = 1;
-            for (int n = p + 1; n < list_length; n++) {
-                System.out.print("[" + (p + 1) + "회전-" + s + "차]");
-                if (list[n] < list[p]) {
-                    int temp = list[p];
-                    list[p] = list[n];
-                    list[n] = temp;
+        for (int a = 0; a + 1 < f; f--) {
+            s = 1;
+            while (a + 1 < f) {
+                System.out.print("[" + n + "회전-" + s + "차]");
+                if (list[a] > list[a + 1]) {
+                    int temp = list[a + 1];
+                    list[a + 1] = list[a];
+                    list[a] = temp;
                     System.out.print("변경 발생");
                     change++;
                 }
                 System.out.println();
-                count++;
+                a++;
                 for (int i = 0; i < list_length; i++) {
                     System.out.print(list[i] + " ");
                 }
                 s++;
+                count++;
                 System.out.println();
+                if (a + 1 >= f) {
+                    a = 0;
+                    break;
+                }
             }
-
-            System.out.println();
+            n++;
         }
         System.out.println();
         System.out.println("<최종 결과>");
@@ -70,5 +75,7 @@ public class Selection_Sort {
         System.out.println();
         System.out.println("실행 횟수 : " + count);
         System.out.println("변경 횟수 : " + change);
+
+
     }
 }
