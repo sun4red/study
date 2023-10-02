@@ -13,75 +13,75 @@ import java.util.List;
 
 public class DBtoList {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		String driver = "com.mysql.cj.jdbc.Driver";
-		String url = "jdbc:mysql://localhost:3306/acc";
+        String driver = "com.mysql.cj.jdbc.Driver";
+        String url = "jdbc:mysql://localhost:3306/acc";
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql;
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        String sql;
 
-		List<Payment> paylist = new ArrayList();
+        List<Payment> paylist = new ArrayList();
 
-		try {
+        try {
 
-			Class.forName(driver);
+            Class.forName(driver);
 
-			con = DriverManager.getConnection(url, "hong", "2143");
+            con = DriverManager.getConnection(url, "hong", "2143");
 
-			sql = "select * from payment";
+            sql = "select * from payment";
 
-			pstmt = con.prepareStatement(sql);
+            pstmt = con.prepareStatement(sql);
 
-			rs = pstmt.executeQuery();
+            rs = pstmt.executeQuery();
 
-			while (rs.next()) {
-				Payment pm = new Payment();
-				pm.setMember(rs.getString("member"));
-				pm.setItem(rs.getString("item"));
-				pm.setAmount(rs.getDouble("amount"));
-				paylist.add(pm);
+            while (rs.next()) {
+                Payment pm = new Payment();
+                pm.setMember(rs.getString("member"));
+                pm.setItem(rs.getString("item"));
+                pm.setAmount(rs.getDouble("amount"));
+                paylist.add(pm);
 
-			}
+            }
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (con != null) {
-					con.close();
-				}
-				if (pstmt != null) {
-					pstmt.close();
-				}
-				if (rs != null) {
-					rs.close();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} // try - finally end
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null) {
+                    con.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } // try - finally end
 
-		double sum = 0;
+        double sum = 0;
 
-		for (int i = 0; i < paylist.size(); i++) {
-			System.out.println("<" + (i + 1) + "번째 결제 건>");
-			System.out.println("참여자 \t:" + paylist.get(i).getMember());
-			System.out.println("항목 \t:" + paylist.get(i).getItem());
-			System.out.println("금액 \t:" + paylist.get(i).getAmount());
-			System.out.println();
-			sum += paylist.get(i).getAmount();
-		}
-		double avg = sum / paylist.size();
+        for (int i = 0; i < paylist.size(); i++) {
+            System.out.println("<" + (i + 1) + "번째 결제 건>");
+            System.out.println("참여자 \t:" + paylist.get(i).getMember());
+            System.out.println("항목 \t:" + paylist.get(i).getItem());
+            System.out.println("금액 \t:" + paylist.get(i).getAmount());
+            System.out.println();
+            sum += paylist.get(i).getAmount();
+        }
+        double avg = sum / paylist.size();
 
-		System.out.println("<결산>");
-		System.out.println("총 금액 \t :" + sum);
-		System.out.println("1건당 평균 금액 \t :" + avg);
+        System.out.println("<결산>");
+        System.out.println("총 금액 \t :" + sum);
+        System.out.println("1건당 평균 금액 \t :" + avg);
 
-	}
+    }
 
 }

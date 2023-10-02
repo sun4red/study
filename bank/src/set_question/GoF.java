@@ -1,4 +1,4 @@
-import java.util.Random;
+package set_question;
 
 public class GoF {
 

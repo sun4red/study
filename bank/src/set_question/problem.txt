@@ -1,15 +1,15 @@
 [1번 문제]
 <DB>
-문제 : Undo
+문제 : SAN
 
 
 [2번 문제]
 <DB>
-문제 : 트랜잭션의 일관성
+문제 : Undo
 
 
 [3번 문제]
 <DB>
-문제 : SAN
+문제 : Locking Granularity
 
 

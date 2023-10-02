@@ -1,9 +1,9 @@
 /**
- * 
+ *
  */
 /**
- * 
+ *
  */
 module bank {
-	requires java.sql;
+    requires java.sql;
 }
