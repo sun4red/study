@@ -12,7 +12,7 @@ drop sequence study_memorize_num;
 alter table study_memorize modify (num default study_memorize_num.nextval);
 create sequence study_memorize_num increment by 1 start with 1;
 
-select * from study_memorize;
+select rownum, part, term from study_memorize;
 select * from study_type;
 
 insert into study_type part values('DB');
@@ -21,3 +21,9 @@ insert into study_memorize (part, term, def) values ('DB', 'test','test');
 insert into study_memorize (num, part, term, def) values (study_memorize_num.nextval, 'DB', 'test','test');
 
 delete study_memorize;
+
+insert into study_type values('º¸¾È');
+
+select term from (select rownum num, term from study_memorize) where num = 3;
+
+select rownum num, term from study_memorize;

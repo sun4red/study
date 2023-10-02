@@ -26,7 +26,7 @@ public class set {
             rs = pstmt.executeQuery();
 
             int ea = 0;
-            int num_ex = 3;
+            int num_ex = 100;
             int[] ex_num = new int[num_ex];
 
             while (rs.next()) {
@@ -57,17 +57,15 @@ public class set {
                     String term = rs.getString("term");
                     String def = rs.getString("def");
 
-                    problem += "[" + (op1 + 1) + "번 문제]\n"
-                            + "<" + part + ">\n";
-                    answer += "[" + (op1 + 1) + "번 문제]\n"
-                            + "<" + part + ">\n";
+                    problem += "[" + (op1 + 1) + "번 문제] <" + part + ">\n\n";
+                    answer += "[" + (op1 + 1) + "번 문제] <" + part + ">\n\n";
                     int ran = (int) (Math.random() * 2);
                     if (ran == 0) {
-                        problem += "문제 : " + term + "\n\n\n";
-                        answer += "문제 : " + term + "\n답 : " + def + "\n\n";
+                        problem += "문제 : " + term + "\n\n\n\n";
+                        answer += "문제 : " + term + "\n답 : " + def + "\n\n\n";
                     } else {
-                        problem += "문제 : " + def + "\n\n\n";
-                        answer += "문제 : " + def + "\n답 : " + term + "\n\n";
+                        problem += "문제 : " + def + "\n\n\n\n";
+                        answer += "문제 : " + def + "\n답 : " + term + "\n\n\n";
                     }
 
                 }
