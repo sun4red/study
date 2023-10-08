@@ -15,6 +15,8 @@ create sequence study_memorize_num increment by 1 start with 1;
 select rownum, part, term from study_memorize;
 select * from study_type;
 
+delete study_memorize where part = null;
+
 insert into study_type part values('DB');
 
 insert into study_memorize (part, term, def) values ('DB', 'test','test');
@@ -22,7 +24,7 @@ insert into study_memorize (num, part, term, def) values (study_memorize_num.nex
 
 delete study_memorize;
 
-insert into study_type values('보안');
+insert into study_type values('프로세스');
 
 select term from (select rownum num, term from study_memorize) where num = 3;
 
