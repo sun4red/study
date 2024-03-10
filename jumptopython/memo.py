@@ -10,9 +10,17 @@ if option == '-a':
     f.write(memo)
     f.write('\n')
     f.close()
+elif option == '-v':
+    f = open('memo.txt')
+    memo = f.read()
+    f.close()
+    print(memo)
 
-
-
+print('='*20)
+print("result:")
 
 print(option)
 print(memo)
+print('='*20)
+
+# 띄어쓰기를 하게되면 다음으로 받은 값으로 취급 되는 것 같다. sys.arvg[]의 다음... 인덱스로?
