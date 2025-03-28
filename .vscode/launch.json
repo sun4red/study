@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Sun/day250328.Main",
+      "projectName": "Sun"
+    },
+    {
+      "type": "java",
+      "name": "Sun/Main",
+      "request": "launch",
+      "mainClass": "Sun/Main",
+      "projectName": "Sun"
+    },
+    {
       "name": "C Debug",
       "type": "cppdbg",
       "request": "launch",
