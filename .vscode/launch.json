@@ -5,6 +5,27 @@
       "type": "java",
       "name": "Main",
       "request": "launch",
+      "mainClass": "Sun/day250415.T2302Q14.Main",
+      "projectName": "Sun"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Sun/day250414.T2301Q20.Main",
+      "projectName": "Sun"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "Sun/day250414.T2301Q1.Main",
+      "projectName": "Sun"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
       "mainClass": "Sun/day250330.Main",
       "projectName": "Sun"
     },
