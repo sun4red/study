@@ -5,6 +5,13 @@
       "type": "java",
       "name": "Main",
       "request": "launch",
+      "mainClass": "Sun/day250417.test.Main",
+      "projectName": "Sun"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
       "mainClass": "Sun/day250415.T2302Q14.Main",
       "projectName": "Sun"
     },

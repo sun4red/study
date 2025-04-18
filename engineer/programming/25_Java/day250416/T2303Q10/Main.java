@@ -5,7 +5,9 @@ class Person{
     public Person(String val){
         name = val;
     }
-    public static String get(){
+    public String get(){
+        // 원문
+    // public static String get(){
         return name;
         // static 메소드는 instance 변수를 호출할 수 없다.
     }
